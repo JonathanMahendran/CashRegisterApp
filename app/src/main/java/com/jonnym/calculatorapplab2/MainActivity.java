@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ListView listView;
     ArrayList<Product> productArrayList;
     AlertDialog.Builder builder;
-    ProductBaseAdaptor adaptor;
+    ProductBaseAdapter adaptor;
     Product product;
     double price;
     int user_quantity;
@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         // 1) return application object 2) adapater 3) list
         productArrayList = ((MyApp)getApplication()).productArrayList;
-        adaptor = new ProductBaseAdaptor(productArrayList, this);
+        adaptor = new ProductBaseAdapter(productArrayList, this);
         listView.setAdapter(adaptor);
 
         //number picker values
@@ -108,7 +108,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 product.productQty -= user_quantity;
                 Order order = new Order(user_quantity, product.productName, price, new Date());
                 ((MyApp)getApplication()).orders.add(order);
-                adaptor = new ProductBaseAdaptor(productArrayList, this);
+                adaptor = new ProductBaseAdapter(productArrayList, this);
                 listView.setAdapter(adaptor);
 
                 if(user_quantity == 0 || product == null)

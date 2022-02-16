@@ -9,11 +9,11 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class OrderBaseAdaptor extends BaseAdapter {
+public class OrderBaseAdapter extends BaseAdapter {
     ArrayList<Order> purchaseList;
     Context context;
 
-    public OrderBaseAdaptor(ArrayList<Order> purchaseList, Context context) {
+    public OrderBaseAdapter(ArrayList<Order> purchaseList, Context context) {
         this.purchaseList = purchaseList;
         this.context = context;
     }

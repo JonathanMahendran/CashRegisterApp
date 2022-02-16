@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class History extends AppCompatActivity {
     ListView listView;
     ArrayList products_p;
-    OrderBaseAdaptor adaptor;
+    OrderBaseAdapter adaptor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -24,7 +24,7 @@ public class History extends AppCompatActivity {
 
         listView = findViewById(R.id.history);
         products_p = ((MyApp)getApplication()).orders;
-        adaptor = new OrderBaseAdaptor(products_p, this);
+        adaptor = new OrderBaseAdapter(products_p, this);
         listView.setAdapter(adaptor);
 
         Intent intent = new Intent(this, HistoryExpand.class);

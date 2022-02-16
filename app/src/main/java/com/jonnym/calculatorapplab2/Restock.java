@@ -18,7 +18,7 @@ public class Restock extends AppCompatActivity implements View.OnClickListener
     Button okay_btn, cancel_btn;
     EditText editText;
     ListView listView;
-    ProductBaseAdaptor productBaseAdaptor;
+    ProductBaseAdapter productBaseAdaptor;
     Product product;
 
 
@@ -34,7 +34,7 @@ public class Restock extends AppCompatActivity implements View.OnClickListener
         cancel_btn = findViewById(R.id.cancel_btn);
         editText = findViewById(R.id.newQuantity);
         listView = findViewById(R.id.newItems);
-        productBaseAdaptor = new ProductBaseAdaptor(listOfProducts, this);
+        productBaseAdaptor = new ProductBaseAdapter(listOfProducts, this);
 
         listOfProducts = ((MyApp) getApplication()).productArrayList;
 
@@ -60,7 +60,7 @@ public class Restock extends AppCompatActivity implements View.OnClickListener
                 if(editText.getText().toString().isEmpty())
                 {
                     product.productQty += Integer.parseInt(editText.getText().toString());
-                    productBaseAdaptor = new ProductBaseAdaptor(listOfProducts, this);
+                    productBaseAdaptor = new ProductBaseAdapter(listOfProducts, this);
                     listView.setAdapter(productBaseAdaptor);
                 }
                 break;

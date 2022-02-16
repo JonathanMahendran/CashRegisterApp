@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class ProductBaseAdaptor extends BaseAdapter {
+public class ProductBaseAdapter extends BaseAdapter {
 
     ArrayList<Product> listOfProducts;
     Context context;
 
-    public ProductBaseAdaptor(ArrayList<Product> listOfProducts, Context context) {
+    public ProductBaseAdapter(ArrayList<Product> listOfProducts, Context context) {
         this.listOfProducts = listOfProducts;
         this.context = context;
     }
